@@ -19,7 +19,7 @@ class InvoiceDetailService(
 ) {
     fun save(request: InvoiceDetailRequest): InvoiceDetailResponse {
         val productEntity = productRepository.findById(request.productId)
-        val invoiceEntity = invoiceRepository.findById(request.invoiceId)
+        val invoiceEntity = invoiceRepository.findById(request.invoiceId!!)
 
         val entity = InvoiceDetail(
             totalPrice = 0.0f,
